@@ -262,6 +262,12 @@
     };
 
     color_scheme.onchange = function () {
+      const chosenData = imagesData[style.value][version.value][this.value];
+      const lock = chosenData.lock;
+
+      // Disable crop_select if lock is true
+      crop_select.disabled = lock;
+
       aspect_ratio_select.disabled = !this.value;
       aspect_ratio_select.onchange();
     };

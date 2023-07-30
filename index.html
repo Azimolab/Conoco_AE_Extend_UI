@@ -112,10 +112,6 @@
 
                 </select>
 
-
-
-
-
               </div>
 
               <div class="col-md-4">
@@ -140,6 +136,109 @@
             </div>
 
 
+            <div class="row g-3">
+              <div class="col-md-1">
+                <hr class="my-2" />
+              </div>
+              <div class="col-md-auto">
+                <h6 class="mb-3">Duration</h6>
+              </div>
+              <div class="col-md">
+                <hr class="my-2" />
+              </div>
+            </div>
+
+            <div class="col-md">
+              <input type="range" class="form-range" id="customRange1" min="15" max="60" step="5" value="15"
+                oninput="updateValue(this.value)" />
+            </div>
+
+            <div class="col-md-3">
+              <input type="text" class="form-control" id="cc-name" placeholder="15" oninput="updateRange(this.value)"
+                required />
+              <!-- <small class="text-muted">set manual duration</small> -->
+            </div>
+
+            <script>
+              function updateValue(newValue) {
+                document.getElementById("cc-name").value = newValue;
+              }
+
+              function updateRange(newValue) {
+                if (newValue < 15) {
+                  newValue = 15;
+                } else if (newValue > 60) {
+                  newValue = 60;
+                }
+                document.getElementById("customRange1").value = newValue;
+              }
+            </script>
+
+
+
+
+            <div class="my-2 row g-3">
+              <div class="col-md-1">
+                <hr class="my-2" />
+              </div>
+              <div class="col-md-auto">
+                <h6 class="mb-3">Export settings</h6>
+              </div>
+              <div class="col-md">
+                <hr class="my-2" />
+              </div>
+            </div>
+
+
+            <div class="row g-3">
+              <div class="col-md-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadios" id="MOV_file" value="option1" checked>
+                  <label class="form-check-label" for="gridRadios1">
+                    MOV
+                  </label>
+                </div>
+
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="gridRadios" id="MP4_file" value="option2">
+                  <label class="form-check-label" for="gridRadios2">
+                    MP4
+                  </label>
+                </div>
+              </div>
+
+              <div class="col-md-4">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" role="switch" id="switch_apha">
+                  <label class="form-check-label" for="flexSwitchCheckDefault">ALPHA</label>
+                </div>
+
+              </div>
+            </div>
+
+            <script>
+              document.addEventListener('DOMContentLoaded', (event) => {
+                // Get references to the elements
+                const movRadio = document.getElementById('MOV_file');
+                const mp4Radio = document.getElementById('MP4_file');
+                const alphaSwitch = document.getElementById('switch_apha');
+
+                // Disable the switch initially if MOV is not checked
+                alphaSwitch.disabled = !movRadio.checked;
+
+                // Listen for changes on the radio buttons
+                movRadio.addEventListener('change', updateSwitch);
+                mp4Radio.addEventListener('change', updateSwitch);
+
+                // Function to enable or disable the switch based on the selected radio button
+                function updateSwitch() {
+                  alphaSwitch.disabled = !movRadio.checked;
+                }
+              });
+            </script>
 
             <div class="my-2 row g-3">
               <div class="col-md-1">
@@ -154,126 +253,25 @@
             </div>
 
 
-
             <div class="image-container" style="height: auto;">
               <div>
                 <img id="image" src="./assets/smm_aqua_only.png" style="max-width: 100%; height: auto;" />
               </div>
             </div>
-        </div>
-        <p>Data: <span id="data"></span></p>
+            <p>Data: <span id="data"></span></p>
 
-
-        <div class="row g-3">
-          <div class="col-md-1">
-            <hr class="my-2" />
-          </div>
-          <div class="col-md-auto">
-            <h6 class="mb-3">Duration</h6>
-          </div>
-          <div class="col-md">
-            <hr class="my-2" />
-          </div>
-        </div>
-
-        <div class="col-md">
-          <input type="range" class="form-range" id="customRange1" min="15" max="60" step="5" value="15"
-            oninput="updateValue(this.value)" />
-        </div>
-
-        <div class="col-md-3">
-          <input type="text" class="form-control" id="cc-name" placeholder="15" oninput="updateRange(this.value)"
-            required />
-          <!-- <small class="text-muted">set manual duration</small> -->
-        </div>
-
-        <script>
-          function updateValue(newValue) {
-            document.getElementById("cc-name").value = newValue;
-          }
-
-          function updateRange(newValue) {
-            if (newValue < 15) {
-              newValue = 15;
-            } else if (newValue > 60) {
-              newValue = 60;
-            }
-            document.getElementById("customRange1").value = newValue;
-          }
-        </script>
-
-
-
-
-        <div class="my-2 row g-3">
-          <div class="col-md-1">
-            <hr class="my-2" />
-          </div>
-          <div class="col-md-auto">
-            <h6 class="mb-3">Export settings</h6>
-          </div>
-          <div class="col-md">
-            <hr class="my-2" />
-          </div>
-        </div>
-
-
-        <div class="row g-3">
-          <div class="col-md-4">
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="gridRadios" id="MOV_file" value="option1" checked>
-              <label class="form-check-label" for="gridRadios1">
-                MOV
-              </label>
+            <div class="d-flex justify-content-end gap-2">
+              <button class="btn btn-primary" type="button">Create Composition</button>
+              <button class="btn btn-primary" type="button">Export</button>
             </div>
 
-          </div>
 
-          <div class="col-md-4">
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="gridRadios" id="MP4_file" value="option2">
-              <label class="form-check-label" for="gridRadios2">
-                MP4
-              </label>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" role="switch" id="switch_apha">
-              <label class="form-check-label" for="flexSwitchCheckDefault">ALPHA</label>
-            </div>
-
-          </div>
         </div>
 
-        <script>
-          document.addEventListener('DOMContentLoaded', (event) => {
-            // Get references to the elements
-            const movRadio = document.getElementById('MOV_file');
-            const mp4Radio = document.getElementById('MP4_file');
-            const alphaSwitch = document.getElementById('switch_apha');
 
-            // Disable the switch initially if MOV is not checked
-            alphaSwitch.disabled = !movRadio.checked;
 
-            // Listen for changes on the radio buttons
-            movRadio.addEventListener('change', updateSwitch);
-            mp4Radio.addEventListener('change', updateSwitch);
 
-            // Function to enable or disable the switch based on the selected radio button
-            function updateSwitch() {
-              alphaSwitch.disabled = !movRadio.checked;
-            }
-          });
-        </script>
 
-        <hr class="my-7" />
-
-        <div class="d-flex justify-content-end gap-2">
-          <button class="btn btn-primary" type="button">Create Composition</button>
-          <button class="btn btn-primary" type="button">Export</button>
-        </div>
 
 
         </form>
