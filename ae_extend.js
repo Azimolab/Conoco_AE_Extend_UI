@@ -1,5 +1,5 @@
 (function () {
-  "use strict";
+  ("use strict");
 
   // DOM elements
   const forms = document.querySelectorAll(".needs-validation");
@@ -8,6 +8,10 @@
   const color_scheme = document.getElementById("color_scheme");
   const crop_select = document.getElementById("crop_select");
   const image = document.getElementById("image");
+  const inputs = document.querySelectorAll("select"); // Seleciona todos os elementos select
+  const createCompositionBtn = document.getElementById("create-composition"); // Botão Create Composition
+  const exportBtn = document.getElementById("export"); // Botão Export
+
   let cropper;
 
   const AR = {
@@ -246,10 +250,34 @@
       });
     };
   }
+  // Verifique se todos os campos estão preenchidos
+  function checkInputs() {
+    let allFilled = true;
+    inputs.forEach((input) => {
+      if (input.value === "") {
+        allFilled = false;
+      }
+    });
+
+    // Se todos os campos estiverem preenchidos, habilite os botões. Caso contrário, desabilite-os
+    if (allFilled) {
+      createCompositionBtn.disabled = false;
+      exportBtn.disabled = false;
+    } else {
+      createCompositionBtn.disabled = true;
+      exportBtn.disabled = true;
+    }
+  }
+
+  // Ouve eventos de alteração em todos os campos de entrada
+  inputs.forEach((input) => {
+    input.addEventListener("change", checkInputs);
+  });
 
   // Event listeners
   window.onload = function () {
     populateDropdown(style, Object.keys(imagesData));
+    checkInputs;
 
     style.onchange = function () {
       populateDropdown(version, Object.keys(imagesData[this.value]));
