@@ -210,8 +210,10 @@
   function initCropper(imageData, aspectRatio, lock, cropOption) {
     if (cropper) cropper.destroy();
 
-    image.src = imageData.img;
+    image.classList.remove("fade");
+
     image.onload = function () {
+      image.classList.add("fade");
       const cropData = imageData.data[aspectRatio];
       const cropScale = cropOption === "100%" ? 0.9 : cropOption === "200%" ? 0.8 : 1;
       console.log(cropScale);
@@ -249,6 +251,8 @@
         },
       });
     };
+
+    image.src = imageData.img;
   }
   // Verifique se todos os campos estão preenchidos
   function checkInputs() {
