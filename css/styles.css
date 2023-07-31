@@ -20,6 +20,10 @@ body {
   /* Isso centralizará o conteúdo se a largura da janela for maior que 700px */
 }
 
+#data {
+  color: #232323;
+}
+
 #customRange1 {
   width: 100%;
 }

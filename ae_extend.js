@@ -232,6 +232,8 @@
             });
           }
           data.textContent = JSON.stringify(cropper.getData(true));
+          // var data3 = JSON.stringify(cropper.getData(true));
+          // console.log(data3);
         },
         ready: function () {
           // console.log(cropScale);
