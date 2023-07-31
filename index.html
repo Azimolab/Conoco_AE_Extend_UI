@@ -107,9 +107,9 @@
               <div class="col-md-4">
                 <label for="country" class="form-label">Crop</label>
                 <select class="form-select" id="crop_select" required>
-                  <option value="free">free</option>
                   <option value="100%">100%</option>
                   <option value="200%">200%</option>
+                  <option value="free">free</option>
                 </select>
               </div>
 
@@ -181,8 +181,8 @@
               }
 
               function updateRange(newValue) {
-                if (newValue < 15) {
-                  newValue = 15;
+                if (newValue < 5) {
+                  newValue = 5;
                 } else if (newValue > 60) {
                   newValue = 60;
                 }

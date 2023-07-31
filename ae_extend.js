@@ -215,7 +215,7 @@
     image.onload = function () {
       image.classList.add("fade");
       const cropData = imageData.data[aspectRatio];
-      const cropScale = cropOption === "100%" ? 0.9 : cropOption === "200%" ? 0.8 : 1;
+      const cropScale = cropOption === "100%" ? 1 : cropOption === "200%" ? 0.7 : 1;
       console.log(cropScale);
       console.log(cropData);
       cropper = new Cropper(image, {
