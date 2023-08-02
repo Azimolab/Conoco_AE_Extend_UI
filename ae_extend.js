@@ -11,6 +11,9 @@
   const inputs = document.querySelectorAll("select"); // Seleciona todos os elementos select
   const createCompositionBtn = document.getElementById("create-composition"); // Botão Create Composition
   const exportBtn = document.getElementById("export"); // Botão Export
+  const switch_alpha = document.getElementById("switch_alpha"); // Botão Export
+  const movRadio = document.getElementById("MOV_file");
+  const mp4Radio = document.getElementById("MP4_file");
 
   let cropper;
 
@@ -96,8 +99,138 @@
         "Teal + Green": { img: "./assets/smm/smm_teal_green.png", lock: false, alpha: false, data: AR },
         "Teal + Aqua": { img: "./assets/smm/smm_teal_aqua.png", lock: false, alpha: false, data: AR },
       },
+      "With Lines": {
+        "Red only": { img: "./assets/smml/smml_red_only.png", lock: false, alpha: false, data: AR },
+        "Blue only": { img: "./assets/smml/smml_blue_only.png", lock: false, alpha: false, data: AR },
+        "Teal only": { img: "./assets/smml/smml__teal_only.png", lock: false, alpha: false, data: AR },
+        "Salmon only": { img: "./assets/smml/smml_salmon_only.png", lock: false, alpha: false, data: AR },
+        "Orange only": { img: "./assets/smml/smml_orange_only.png", lock: false, alpha: false, data: AR },
+        "Purple only": { img: "./assets/smml/smml_purple_only.png", lock: false, alpha: false, data: AR },
+        "Fuchsia only": { img: "./assets/smml/smml_fuchsia_only.png", lock: false, alpha: false, data: AR },
+        "Green only": { img: "./assets/smml/smml_green_only.png", lock: false, alpha: false, data: AR },
+        "Aqua only": { img: "./assets/smml/smml_aqua_only.png", lock: false, alpha: false, data: AR },
+        "Red + Salmon": { img: "./assets/smml/smml_red_salmon.png", lock: false, alpha: false, data: AR },
+        "Red + Orange": { img: "./assets/smml/smml_red_orange.png", lock: false, alpha: false, data: AR },
+        "Blue + Purple": { img: "./assets/smml/smml_blue_purple.png", lock: false, alpha: false, data: AR },
+        "Blue + Fuchsia": { img: "./assets/smml/smml_blue_fuchsia.png", lock: false, alpha: false, data: AR },
+        "Teal + Green": { img: "./assets/smml/smml_teal_green.png", lock: false, alpha: false, data: AR },
+        "Teal + Aqua": { img: "./assets/smml/smml_teal_aqua.png", lock: false, alpha: false, data: AR },
+      },
+      "Text Frame": {
+        "Red only": { img: "./assets/smm_text_frame/smm_text_frame_red_only_16_9.png", lock: true, alpha: true, data: AR2 },
+        "Blue only": { img: "./assets/smm_text_frame/smm_text_frame_blue_only_16_9.png", lock: true, alpha: true, data: AR2 },
+        "Teal only": { img: "./assets/smm_text_frame/smm_text_frame_teal_only_16_9.png", lock: true, alpha: true, data: AR2 },
+        "Salmon only": { img: "./assets/smm_text_frame/smm_text_frame_salmon_only_16_9.png", lock: true, alpha: true, data: AR2 },
+        "Orange only": { img: "./assets/smm_text_frame/smm_text_frame_orange_only_16_9.png", lock: true, alpha: true, data: AR2 },
+        "Purple only": { img: "./assets/smm_text_frame/smm_text_frame_purple_only_16_9.png", lock: true, alpha: true, data: AR2 },
+        "Fuchsia only": { img: "./assets/smm_text_frame/smm_text_frame_fuchsia_only_16_9.png", lock: true, alpha: true, data: AR2 },
+        "Green only": { img: "./assets/smm_text_frame/smm_text_frame_green_only_16_9.png", lock: true, alpha: true, data: AR2 },
+        "Aqua only": { img: "./assets/smm_text_frame/smm_text_frame_aqua_only_16_9.png", lock: true, alpha: true, data: AR2 },
+        "Red + Salmon": { img: "./assets/smm_text_frame/smm_text_frame_red_salmon_16_9.png", lock: true, alpha: true, data: AR2 },
+        "Red + Orange": { img: "./assets/smm_text_frame/smm_text_frame_red_orange_16_9.png", lock: true, alpha: true, data: AR2 },
+        "Blue + Purple": { img: "./assets/smm_text_frame/smm_text_frame_blue_purple_16_9.png", lock: true, alpha: true, data: AR2 },
+        "Blue + Fuchsia": { img: "./assets/smm_text_frame/smm_text_frame_blue_fuchsia_16_9.png", lock: true, alpha: true, data: AR2 },
+        "Teal + Green": { img: "./assets/smm_text_frame/smm_text_frame_teal_green_16_9.png", lock: true, alpha: true, data: AR2 },
+        "Teal + Aqua": { img: "./assets/smm_text_frame/smm_text_frame_teal_aqua_16_9.png", lock: true, alpha: true, data: AR2 },
+      },
     },
-
+    "Linear Mark Motif": {
+      Main: {
+        Red: { img: "./assets/lmm_m/lmm_main_red_16_9.png", lock: false, alpha: false, data: AR },
+        Blue: { img: "./assets/lmm_m/lmm_main_blue_16_9.png", lock: false, alpha: false, data: AR },
+        Teal: { img: "./assets/lmm_m/lmm_main_teal_16_9.png", lock: false, alpha: false, data: AR },
+        Salmon: { img: "./assets/lmm_m/lmm_main_salmon_16_9.png", lock: false, alpha: false, data: AR },
+        Orange: { img: "./assets/lmm_m/lmm_main_orange_16_9.png", lock: false, alpha: false, data: AR },
+        Purple: { img: "./assets/lmm_m/lmm_main_purple_16_9.png", lock: false, alpha: false, data: AR },
+        Fuchsia: { img: "./assets/lmm_m/lmm_main_fuchsia_16_9.png", lock: false, alpha: false, data: AR },
+        Green: { img: "./assets/lmm_m/lmm_main_green_16_9.png", lock: false, alpha: false, data: AR },
+        Aqua: { img: "./assets/lmm_m/lmm_main_aqua_16_9.png", lock: false, alpha: false, data: AR },
+      },
+      "Text Frame": {
+        "Red 1 BG White": { img: "./assets/lmm_text/lmm_text_frame_red_white.png", lock: true, alpha: false, data: AR4 },
+        "Red 1 BG Red 4": { img: "./assets/lmm_text/lmm_text_frame_red_only.png", lock: true, alpha: false, data: AR4 },
+        "Blue 1 BG White": { img: "./assets/lmm_text/lmm_text_frame_blue_white.png", lock: true, alpha: false, data: AR4 },
+        "Blue 1 BG Blue 4": { img: "./assets/lmm_text/lmm_text_frame_blue_only.png", lock: true, alpha: false, data: AR4 },
+        "Teal 1 BG White": { img: "./assets/lmm_text/lmm_text_frame_teal_white.png", lock: true, alpha: false, data: AR4 },
+        "Teal 1 BG Teal 4": { img: "./assets/lmm_text/lmm_text_frame_teal_only.png", lock: true, alpha: false, data: AR4 },
+        "Salmon 1 BG White": { img: "./assets/lmm_text/lmm_text_frame_salmon_white.png", lock: true, alpha: false, data: AR4 },
+        "Salmon 1 BG Salmon 4": { img: "./assets/lmm_text/lmm_text_frame_salmon_only.png", lock: true, alpha: false, data: AR4 },
+        "Orange 1 BG White": { img: "./assets/lmm_text/lmm_text_frame_orange_white.png", lock: true, alpha: false, data: AR4 },
+        "Orange 1 BG Orange 4": { img: "./assets/lmm_text/lmm_text_frame_orange_only.png", lock: true, alpha: false, data: AR4 },
+        "Purple 1 BG White": { img: "./assets/lmm_text/lmm_text_frame_purple_white.png", lock: true, alpha: false, data: AR4 },
+        "Purple 1 BG Purple 4": { img: "./assets/lmm_text/lmm_text_frame_purple_only.png", lock: true, alpha: false, data: AR4 },
+        "Fuchsia 1 BG White": { img: "./assets/lmm_text/lmm_text_frame_fuchsia_white.png", lock: true, alpha: false, data: AR4 },
+        "Fuchsia 1 BG Fuchsia 4": { img: "./assets/lmm_text/lmm_text_frame_fuchsia_only.png", lock: true, alpha: false, data: AR4 },
+        "Green 1 BG White": { img: "./assets/lmm_text/lmm_text_frame_green_white.png", lock: true, alpha: false, data: AR4 },
+        "Green 1 BG Green 4": { img: "./assets/lmm_text/lmm_text_frame_green_only.png", lock: true, alpha: false, data: AR4 },
+        "Aqua 1 BG White": { img: "./assets/lmm_text/lmm_text_frame_aqua_white.png", lock: true, alpha: false, data: AR4 },
+        "Aqua 1 BG Aqua 4": { img: "./assets/lmm_text/lmm_text_frame_aqua_only.png", lock: true, alpha: false, data: AR4 },
+      },
+    },
+    Ribbon: {
+      Main: {
+        "Red 1 BG White": { img: "./assets/ribbon_main/ribbon_main_red02_white.jpg", lock: true, alpha: false, data: AR3 },
+        "Red 1 BG Red 4": { img: "./assets/ribbon_main/ribbon_main_red02_only.jpg", lock: true, alpha: false, data: AR3 },
+        "Blue 1 BG White": { img: "./assets/ribbon_main/ribbon_main_blue02_white.jpg", lock: true, alpha: false, data: AR3 },
+        "Blue 1 BG Blue 4": { img: "./assets/ribbon_main/ribbon_main_blue02_only.jpg", lock: true, alpha: false, data: AR3 },
+        "Teal 1 BG White": { img: "./assets/ribbon_main/ribbon_main_teal02_white.jpg", lock: true, alpha: false, data: AR3 },
+        "Teal 1 BG Teal 4": { img: "./assets/ribbon_main/ribbon_main_teal02_only.jpg", lock: true, alpha: false, data: AR3 },
+        "Salmon 1 BG White": { img: "./assets/ribbon_main/ribbon_main_salmon02_white.jpg", lock: true, alpha: false, data: AR3 },
+        "Salmon 1 BG Salmon 4": { img: "./assets/ribbon_main/ribbon_main_salmon02_only.jpg", lock: true, alpha: false, data: AR3 },
+        "Orange 1 BG White": { img: "./assets/ribbon_main/ribbon_main_orange02_white.jpg", lock: true, alpha: false, data: AR3 },
+        "Orange 1 BG Orange 4": { img: "./assets/ribbon_main/ribbon_main_orange02_only.jpg", lock: true, alpha: false, data: AR3 },
+        "Purple 1 BG White": { img: "./assets/ribbon_main/ribbon_main_purple02_white.jpg", lock: true, alpha: false, data: AR3 },
+        "Purple 1 BG Purple 4": { img: "./assets/ribbon_main/ribbon_main_purple02_only.jpg", lock: true, alpha: false, data: AR3 },
+        "Fuchsia 1 BG White": { img: "./assets/ribbon_main/ribbon_main_fuchsia02_white.jpg", lock: true, alpha: false, data: AR3 },
+        "Fuchsia 1 BG Fuchsia 4": { img: "./assets/ribbon_main/ribbon_main_fuchsia02_only.jpg", lock: true, alpha: false, data: AR3 },
+        "Green 1 BG White": { img: "./assets/ribbon_main/ribbon_main_green02_white.jpg", lock: true, alpha: false, data: AR3 },
+        "Green 1 BG Green 4": { img: "./assets/ribbon_main/ribbon_main_green02_only.jpg", lock: true, alpha: false, data: AR3 },
+        "Aqua 1 BG White": { img: "./assets/ribbon_main/ribbon_main_aqua02_white.jpg", lock: true, alpha: false, data: AR3 },
+        "Aqua 1 BG Aqua 4": { img: "./assets/ribbon_main/ribbon_main_aqua02_only.jpg", lock: true, alpha: false, data: AR3 },
+      },
+    },
+    "3D": {
+      Fluid: {
+        "Red 1 BG White": { img: "./assets/3d_fluid_main/3d_fluid_red_white.jpg", lock: true, alpha: false, data: AR3 },
+        "Red 1 BG Red 4": { img: "./assets/3d_fluid_main/3d_fluid_red_only.jpg", lock: true, alpha: false, data: AR3 },
+        "Blue 1 BG White": { img: "./assets/3d_fluid_main/3d_fluid_blue_white.jpg", lock: true, alpha: false, data: AR3 },
+        "Blue 1 BG Blue 4": { img: "./assets/3d_fluid_main/3d_fluid_blue_only.jpg", lock: true, alpha: false, data: AR3 },
+        "Teal 1 BG White": { img: "./assets/3d_fluid_main/3d_fluid_teal_white.jpg", lock: true, alpha: false, data: AR3 },
+        "Teal 1 BG Teal 4": { img: "./assets/3d_fluid_main/3d_fluid_teal_only.jpg", lock: true, alpha: false, data: AR3 },
+        "Salmon 1 BG White": { img: "./assets/3d_fluid_main/3d_fluid_salmon_white.jpg", lock: true, alpha: false, data: AR3 },
+        "Salmon 1 BG Salmon 4": { img: "./assets/3d_fluid_main/3d_fluid_salmon_only.jpg", lock: true, alpha: false, data: AR3 },
+        "Orange 1 BG White": { img: "./assets/3d_fluid_main/3d_fluid_orange_white.jpg", lock: true, alpha: false, data: AR3 },
+        "Orange 1 BG Orange 4": { img: "./assets/3d_fluid_main/3d_fluid_orange_only.jpg", lock: false, alpha: false, data: AR3 },
+        "Purple 1 BG White": { img: "./assets/3d_fluid_main/3d_fluid_purple_white.jpg", lock: true, alpha: false, data: AR3 },
+        "Purple 1 BG Purple 4": { img: "./assets/3d_fluid_main/3d_fluid_purple_only.jpg", lock: true, alpha: false, data: AR3 },
+        "Fuchsia 1 BG White": { img: "./assets/3d_fluid_main/3d_fluid_fuchsia_white.jpg", lock: true, alpha: false, data: AR3 },
+        "Fuchsia 1 BG Fuchsia 4": { img: "./assets/3d_fluid_main/3d_fluid_fuchsia_only.jpg", lock: true, alpha: false, data: AR3 },
+        "Green 1 BG White": { img: "./assets/3d_fluid_main/3d_fluid_green_white.jpg", lock: true, alpha: false, data: AR3 },
+        "Green 1 BG Green 4": { img: "./assets/3d_fluid_main/3d_fluid_green_only.jpg", lock: true, alpha: false, data: AR3 },
+        "Aqua 1 BG White": { img: "./assets/3d_fluid_main/3d_fluid_aqua_white.jpg", lock: true, alpha: false, data: AR3 },
+        "Aqua 1 BG Aqua 4": { img: "./assets/3d_fluid_main/3d_fluid_aqua_only.jpg", lock: true, alpha: false, data: AR3 },
+      },
+      Precise: {
+        "Red 1 BG White": { img: "./assets/3d_precise/3d_precise_red02_white.jpg", lock: true, alpha: false, data: AR3 },
+        "Red 1 BG Red 4": { img: "./assets/3d_precise/3d_precise_red02_only.jpg", lock: true, alpha: false, data: AR3 },
+        "Blue 1 BG White": { img: "./assets/3d_precise/3d_precise_blue02_white.jpg", lock: true, alpha: false, data: AR3 },
+        "Blue 1 BG Blue 4": { img: "./assets/3d_precise/3d_precise_blue02_only.jpg", lock: true, alpha: false, data: AR3 },
+        "Teal 1 BG White": { img: "./assets/3d_precise/3d_precise_teal02_white.jpg", lock: true, alpha: false, data: AR3 },
+        "Teal 1 BG Teal 4": { img: "./assets/3d_precise/3d_precise_teal02_only.jpg", lock: true, alpha: false, data: AR3 },
+        "Salmon 1 BG White": { img: "./assets/3d_precise/3d_precise_salmon02_white.jpg", lock: true, alpha: false, data: AR3 },
+        "Salmon 1 BG Salmon 4": { img: "./assets/3d_precise/3d_precise_salmon02_only.jpg", lock: true, alpha: false, data: AR3 },
+        "Orange 1 BG White": { img: "./assets/3d_precise/3d_precise_orange02_white.jpg", lock: true, alpha: false, data: AR3 },
+        "Orange 1 BG Orange 4": { img: "./assets/3d_precise/3d_precise_orange02_only.jpg", lock: true, alpha: false, data: AR3 },
+        "Purple 1 BG White": { img: "./assets/3d_precise/3d_precise_purple02_white.jpg", lock: true, alpha: false, data: AR3 },
+        "Purple 1 BG Purple 4": { img: "./assets/3d_precise/3d_precise_purple02_only.jpg", lock: true, alpha: false, data: AR3 },
+        "Fuchsia 1 BG White": { img: "./assets/3d_precise/3d_precise_fuchsia02_white.jpg", lock: true, alpha: false, data: AR3 },
+        "Fuchsia 1 BG Fuchsia 4": { img: "./assets/3d_precise/3d_precise_fuchsia02_only.jpg", lock: true, alpha: false, data: AR3 },
+        "Green 1 BG White": { img: "./assets/3d_precise/3d_precise_green02_white.jpg", lock: true, alpha: false, data: AR3 },
+        "Green 1 BG Green 4": { img: "./assets/3d_precise/3d_precise_green02_only.jpg", lock: true, alpha: false, data: AR3 },
+        "Aqua 1 BG White": { img: "./assets/3d_precise/3d_precise_aqua02_white.jpg", lock: true, alpha: false, data: AR3 },
+        "Aqua 1 BG Aqua 4": { img: "./assets/3d_precise/3d_precise_aqua02_only.jpg", lock: true, alpha: false, data: AR3 },
+      },
+    },
     // Continue dessa forma para as outras categorias: Database, Hybrid/Cross-Platform
   };
 
@@ -175,6 +308,35 @@
     }
   }
 
+  function checkAlpha() {
+    const chosenData = imagesData[style.value][version.value][color_scheme.value];
+
+    if (chosenData.alpha && movRadio.checked) {
+      switch_alpha.disabled = false;
+      switch_alpha.checked = false;
+    } else {
+      switch_alpha.disabled = true;
+      switch_alpha.checked = false;
+    }
+
+    console.log(chosenData.alpha);
+  }
+
+  // Função que será chamada sempre que o checkbox for alterado
+  function handleCheckboxChange(event) {
+    if (event.target.checked) {
+      console.log("Checkbox marcado");
+    } else {
+      // Checkbox foi desmarcado
+      console.log("Checkbox desmarcado");
+    }
+    checkAlpha();
+  }
+
+  // Adiciona o evento de "change" ao checkbox
+  mp4Radio.addEventListener("change", handleCheckboxChange);
+  movRadio.addEventListener("change", handleCheckboxChange);
+
   // Ouve eventos de alteração em todos os campos de entrada
   inputs.forEach((input) => {
     input.addEventListener("change", checkInputs);
@@ -188,11 +350,13 @@
     style.onchange = function () {
       populateDropdown(version, Object.keys(imagesData[this.value]));
       version.onchange();
+      checkAlpha();
     };
 
     version.onchange = function () {
       populateDropdown(color_scheme, Object.keys(imagesData[style.value][this.value]));
       color_scheme.onchange();
+      checkAlpha();
     };
 
     color_scheme.onchange = function () {
@@ -204,6 +368,7 @@
 
       aspect_ratio_select.disabled = !this.value;
       aspect_ratio_select.onchange();
+      checkAlpha();
     };
 
     aspect_ratio_select.onchange = function () {
@@ -211,6 +376,7 @@
       const aspectRatio = this.value;
       const lock = chosenData.lock;
       const cropOption = crop_select.value;
+      checkAlpha();
       initCropper(chosenData, aspectRatio, lock, cropOption);
     };
 
@@ -219,27 +385,32 @@
       const aspectRatio = aspect_ratio_select.value;
       const lock = chosenData.lock;
       const cropOption = this.value;
+      checkAlpha();
       initCropper(chosenData, aspectRatio, lock, cropOption);
     };
 
-    document.addEventListener("DOMContentLoaded", (event) => {
-      // Get references to the elements
-      const movRadio = document.getElementById("MOV_file");
-      const mp4Radio = document.getElementById("MP4_file");
-      const alphaSwitch = document.getElementById("switch_apha");
+    switch_alpha.onchange = function () {
+      const chosenData = imagesData[style.value][version.value][color_scheme.value];
 
-      // Disable the switch initially if MOV is not checked
-      alphaSwitch.disabled = !movRadio.checked;
+      const isSwitchChecked = switch_alpha.checked;
+      const aspectRatio = aspect_ratio_select.value;
+      const lock = chosenData.lock;
+      const cropOption = crop_select.value;
 
-      // Listen for changes on the radio buttons
-      movRadio.addEventListener("change", updateSwitch);
-      mp4Radio.addEventListener("change", updateSwitch);
+      let selectedData;
 
-      // Function to enable or disable the switch based on the selected radio button
-      function updateSwitch() {
-        alphaSwitch.disabled = !movRadio.checked;
+      if (isSwitchChecked) {
+        const newChosenData = Object.assign({}, chosenData);
+        newChosenData.img = newChosenData.img.replace(".png", "_alpha.png");
+        selectedData = newChosenData;
+      } else {
+        selectedData = chosenData;
       }
-    });
+
+      console.log(selectedData);
+
+      initCropper(selectedData, aspectRatio, lock, cropOption);
+    };
 
     style.onchange(); // Populate the dropdowns on page load
   };
