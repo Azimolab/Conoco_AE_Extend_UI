@@ -144,16 +144,15 @@
               <div class="col-md-4">
 
                 <div class="input-group mb-3">
-                  <input type="text" class="form-control" id="cc-name" placeholder="15"
-                    oninput="updateRange(this.value)" required /> <span class="input-group-text"
-                    id="basic-addon2">seconds</span>
+                  <input type="text" class="form-control" id="cc-name" placeholder="15" required />
+                  <span class="input-group-text" id="basic-addon2">seconds</span>
                 </div>
 
                 <!-- <small class="text-muted">set manual duration</small> -->
               </div>
               <div class="col-md px-3">
-                <input type="range" class="form-range" id="customRange1" min="5" max="60" step="5" value="15"
-                  oninput="updateValue(this.value)" />
+                <input type="range" class="form-range" id="customRange1" min="5" max="60" step="5" value="15" />
+                <!-- oninput removido daqui -->
 
                 <div id="sliderTicks">
                   <span>5</span>
@@ -171,79 +170,63 @@
                 </div>
               </div>
 
+              <script>
 
-            </div>
-
-
-            <script>
-              function updateValue(newValue) {
-                document.getElementById("cc-name").value = newValue;
-              }
-
-              function updateRange(newValue) {
-                if (newValue < 5) {
-                  newValue = 5;
-                } else if (newValue > 60) {
-                  newValue = 60;
-                }
-                document.getElementById("customRange1").value = newValue;
-              }
-            </script>
+              </script>
 
 
 
-
-            <div class="my-2 row g-3">
-              <div class="col-md-1">
-                <hr class="my-2" />
+              <div class="my-2 row g-3">
+                <div class="col-md-1">
+                  <hr class="my-2" />
+                </div>
+                <div class="col-md-auto">
+                  <h6 class="mb-3">Export settings</h6>
+                </div>
+                <div class="col-md">
+                  <hr class="my-2" />
+                </div>
               </div>
-              <div class="col-md-auto">
-                <h6 class="mb-3">Export settings</h6>
-              </div>
-              <div class="col-md">
-                <hr class="my-2" />
-              </div>
-            </div>
 
-
-            <div class="row">
 
               <div class="row">
 
-                <div class="col-md-2">
+                <div class="row">
+
+                  <div class="col-md-2">
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="MOV_file" value="option1"
+                        checked>
+                      <label class="form-check-label" for="gridRadios1">
+                        MOV
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="col-md-10">
+                    <div class="form-check form-switch">
+                      <input class="form-check-input" type="checkbox" role="switch" id="switch_alpha">
+                      <label class="form-check-label" for="flexSwitchCheckDefault">ALPHA</label>
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+                <div class="col-md-12">
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="MOV_file" value="option1"
-                      checked>
-                    <label class="form-check-label" for="gridRadios1">
-                      MOV
+                    <input class="form-check-input" type="radio" name="gridRadios" id="MP4_file" value="option2">
+                    <label class="form-check-label" for="gridRadios2">
+                      MP4
                     </label>
                   </div>
                 </div>
 
-                <div class="col-md-10">
-                  <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="switch_alpha">
-                    <label class="form-check-label" for="flexSwitchCheckDefault">ALPHA</label>
-                  </div>
-
-                </div>
 
               </div>
 
-
-              <div class="col-md-12">
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="gridRadios" id="MP4_file" value="option2">
-                  <label class="form-check-label" for="gridRadios2">
-                    MP4
-                  </label>
-                </div>
-              </div>
-
-
-            </div>
-
-            <script>
+              <script>
               // document.addEventListener('DOMContentLoaded', (event) => {
               //   // Get references to the elements
               //   const movRadio = document.getElementById('MOV_file');
@@ -262,48 +245,48 @@
               //     alphaSwitch.disabled = !movRadio.checked;
               //   }
               // });
-            </script>
+              </script>
 
-            <div class="my-2 row g-3">
-              <div class="col-md-1">
-                <hr class="my-2" />
+              <div class="my-2 row g-3">
+                <div class="col-md-1">
+                  <hr class="my-2" />
+                </div>
+                <div class="col-md-auto">
+                  <h6 class="mb-3">Preview</h6>
+                </div>
+                <div class="col-md">
+                  <hr class="my-2" />
+                </div>
               </div>
-              <div class="col-md-auto">
-                <h6 class="mb-3">Preview</h6>
+
+
+              <div class="image-container" style="height: auto;">
+                <div>
+                  <img id="image" src="./assets/smm_aqua_only.png" style="max-width: 100%; height: auto;" />
+                </div>
               </div>
-              <div class="col-md">
-                <hr class="my-2" />
+              <p><span id="data"></span></p>
+
+              <div class="d-flex justify-content-end gap-2">
+
+                <button class="btn btn-primary custom-btn" type="button" id="create-composition" disabled>
+                  <i class="bi bi-download"></i> Create Composition
+                </button>
+                <button class="btn btn-primary custom-btn" type="button" id="export" disabled>
+                  <i class="bi bi-upload"></i> Export
+                </button>
               </div>
+
             </div>
 
 
-            <div class="image-container" style="height: auto;">
-              <div>
-                <img id="image" src="./assets/smm_aqua_only.png" style="max-width: 100%; height: auto;" />
-              </div>
-            </div>
-            <p><span id="data"></span></p>
 
-            <div class="d-flex justify-content-end gap-2">
 
-              <button class="btn btn-primary custom-btn" type="button" id="create-composition" disabled>
-                <i class="bi bi-download"></i> Create Composition
-              </button>
-              <button class="btn btn-primary custom-btn" type="button" id="export" disabled>
-                <i class="bi bi-upload"></i> Export
-              </button>
-            </div>
 
+
+
+          </form>
         </div>
-
-
-
-
-
-
-
-        </form>
-      </div>
 
 
 

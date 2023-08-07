@@ -54,6 +54,13 @@ body {
   font-size: 10px;
 }
 
+.desabilitado {
+  color: #d3d3d3;
+  opacity: 0.1;
+  pointer-events: none; /* Desabilita eventos de clique */
+  cursor: not-allowed; /* Muda o cursor para indicar que o item está desabilitado */
+}
+
 h6 {
   font-size: 14px; /* Mude para o tamanho de fonte que você deseja */
   font-weight: 100;
