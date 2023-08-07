@@ -223,6 +223,7 @@
         "Green 1 BG Green 4": { img: "./assets/lmm_m/lmm_main_green_only_16_9.png", rduration: false, lock: false, alpha: false, data: AR },
         "Aqua 1 BG White": { img: "./assets/lmm_m/lmm_main_aqua_white_16_9.png", rduration: false, lock: false, alpha: true, data: AR },
         "Aqua 1 BG Aqua 4": { img: "./assets/lmm_m/lmm_main_aqua_only_16_9.png", rduration: false, lock: false, alpha: false, data: AR },
+        White: { img: "./assets/lmm_m/lmm_main_white_only_16_9.png", rduration: false, lock: false, alpha: true, data: AR },
       },
       "Text Frame": {
         "Red 1 BG White": { img: "./assets/lmm_text/lmm_text_frame_red_white.png", rduration: false, lock: true, alpha: true, data: AR4 },
@@ -243,6 +244,7 @@
         "Green 1 BG Green 4": { img: "./assets/lmm_text/lmm_text_frame_green_only.png", rduration: false, lock: true, alpha: false, data: AR4 },
         "Aqua 1 BG White": { img: "./assets/lmm_text/lmm_text_frame_aqua_white.png", rduration: false, lock: true, alpha: true, data: AR4 },
         "Aqua 1 BG Aqua 4": { img: "./assets/lmm_text/lmm_text_frame_aqua_only.png", rduration: false, lock: true, alpha: false, data: AR4 },
+        White: { img: "./assets/lmm_text/lmm_text_frame_white_only.png", rduration: false, lock: true, alpha: true, data: AR4 },
       },
     },
     Ribbon: {
