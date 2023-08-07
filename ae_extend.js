@@ -28,6 +28,14 @@
     updateRange(this.value);
   });
 
+  document.addEventListener("keydown", function (event) {
+    if (event.keyCode === 13) {
+      // 13 is the key code for Enter
+      event.preventDefault();
+      return false;
+    }
+  });
+
   if (rduration) {
     document.getElementById("cc-name").disabled = true;
     for (var valor of valoresDesabilitados) {
@@ -113,10 +121,10 @@
     "16:9": { x: 370, y: 234, width: 381, aspectRatio: 1.7777777777777777 },
     "9:16": { x: 446, y: 56, width: 217, aspectRatio: 0.5625 },
     "2:3": { x: 443, y: 120, width: 214, aspectRatio: 0.6666666666666667 },
-    "4:3": { x: 350, y: 130, width: 397, aspectRatio: 1.333333333333333 },
-    "21:9": { x: 354, y: 265, width: 393, aspectRatio: 2.333333333333333 },
+    "4:3": { x: 370, y: 130, width: 397, aspectRatio: 1.333333333333333 },
+    "21:9": { x: 370, y: 265, width: 393, aspectRatio: 2.333333333333333 },
     "9:21": { x: 446, y: 29, width: 217, aspectRatio: 0.4285714285714286 },
-    "1:1": { x: 362, y: 53, width: 385, aspectRatio: 1 },
+    "1:1": { x: 370, y: 53, width: 385, aspectRatio: 1 },
   };
 
   // Images data
@@ -172,13 +180,26 @@
         "Red + Orange": { img: "./assets/smm_text_frame/smm_text_frame_red_orange_16_9.png", rduration: false, lock: true, alpha: true, data: AR2 },
         "Blue + Purple": { img: "./assets/smm_text_frame/smm_text_frame_blue_purple_16_9.png", rduration: false, lock: true, alpha: true, data: AR2 },
         "Blue + Fuchsia": {
+          img: "./assets/smm_text_frame/smm_text_frame_blue_purple_16_9.png",
+          rduration: false,
+          lock: true,
+          alpha: true,
+          data: AR2,
+        },
+        "Blue + Fuchsia": {
           img: "./assets/smm_text_frame/smm_text_frame_blue_fuchsia_16_9.png",
           rduration: false,
           lock: true,
           alpha: true,
           data: AR2,
         },
-        "Teal + Green": { img: "./assets/smm_text_frame/smm_text_frame_teal_green_16_9.png", rduration: false, lock: true, alpha: true, data: AR2 },
+        "Teal + Green": {
+          img: "./assets/smm_text_frame/smm_text_frame_teal_green_16disable.jpg_9.png",
+          rduration: false,
+          lock: true,
+          alpha: true,
+          data: AR2,
+        },
         "Teal + Aqua": { img: "./assets/smm_text_frame/smm_text_frame_teal_aqua_16_9.png", rduration: false, lock: true, alpha: true, data: AR2 },
       },
     },
@@ -226,72 +247,72 @@
     },
     Ribbon: {
       Main: {
-        "Red 1 BG White": { img: "./assets/ribbon_main/ribbon_main_red02_white.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Red 1 BG Red 4": { img: "./assets/ribbon_main/ribbon_main_red02_only.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Blue 1 BG White": { img: "./assets/ribbon_main/ribbon_main_blue02_white.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Blue 1 BG Blue 4": { img: "./assets/ribbon_main/ribbon_main_blue02_only.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Teal 1 BG White": { img: "./assets/ribbon_main/ribbon_main_teal02_white.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Teal 1 BG Teal 4": { img: "./assets/ribbon_main/ribbon_main_teal02_only.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Salmon 1 BG White": { img: "./assets/ribbon_main/ribbon_main_salmon02_white.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Salmon 1 BG Salmon 4": { img: "./assets/ribbon_main/ribbon_main_salmon02_only.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Orange 1 BG White": { img: "./assets/ribbon_main/ribbon_main_orange02_white.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Orange 1 BG Orange 4": { img: "./assets/ribbon_main/ribbon_main_orange02_only.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Purple 1 BG White": { img: "./assets/ribbon_main/ribbon_main_purple02_white.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Purple 1 BG Purple 4": { img: "./assets/ribbon_main/ribbon_main_purple02_only.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Fuchsia 1 BG White": { img: "./assets/ribbon_main/ribbon_main_fuchsia02_white.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
+        "Red 1 BG White": { img: "./assets/ribbon_main/ribbon_main_red02_white.png", rduration: true, lock: true, alpha: true, data: AR3 },
+        "Red 1 BG Red 4": { img: "./assets/ribbon_main/ribbon_main_red02_only.png", rduration: true, lock: true, alpha: false, data: AR3 },
+        "Blue 1 BG White": { img: "./assets/ribbon_main/ribbon_main_blue02_white.png", rduration: true, lock: true, alpha: true, data: AR3 },
+        "Blue 1 BG Blue 4": { img: "./assets/ribbon_main/ribbon_main_blue02_only.png", rduration: true, lock: true, alpha: false, data: AR3 },
+        "Teal 1 BG White": { img: "./assets/ribbon_main/ribbon_main_teal02_white.png", rduration: true, lock: true, alpha: true, data: AR3 },
+        "Teal 1 BG Teal 4": { img: "./assets/ribbon_main/ribbon_main_teal02_only.png", rduration: true, lock: true, alpha: false, data: AR3 },
+        "Salmon 1 BG White": { img: "./assets/ribbon_main/ribbon_main_salmon02_white.png", rduration: true, lock: true, alpha: true, data: AR3 },
+        "Salmon 1 BG Salmon 4": { img: "./assets/ribbon_main/ribbon_main_salmon02_only.png", rduration: true, lock: true, alpha: false, data: AR3 },
+        "Orange 1 BG White": { img: "./assets/ribbon_main/ribbon_main_orange02_white.png", rduration: true, lock: true, alpha: true, data: AR3 },
+        "Orange 1 BG Orange 4": { img: "./assets/ribbon_main/ribbon_main_orange02_only.png", rduration: true, lock: true, alpha: false, data: AR3 },
+        "Purple 1 BG White": { img: "./assets/ribbon_main/ribbon_main_purple02_white.png", rduration: true, lock: true, alpha: true, data: AR3 },
+        "Purple 1 BG Purple 4": { img: "./assets/ribbon_main/ribbon_main_purple02_only.png", rduration: true, lock: true, alpha: false, data: AR3 },
+        "Fuchsia 1 BG White": { img: "./assets/ribbon_main/ribbon_main_fuchsia02_white.png", rduration: true, lock: true, alpha: true, data: AR3 },
         "Fuchsia 1 BG Fuchsia 4": {
-          img: "./assets/ribbon_main/ribbon_main_fuchsia02_only.jpg",
+          img: "./assets/ribbon_main/ribbon_main_fuchsia02_only.png",
           rduration: true,
           lock: true,
           alpha: false,
           data: AR3,
         },
-        "Green 1 BG White": { img: "./assets/ribbon_main/ribbon_main_green02_white.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Green 1 BG Green 4": { img: "./assets/ribbon_main/ribbon_main_green02_only.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Aqua 1 BG White": { img: "./assets/ribbon_main/ribbon_main_aqua02_white.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Aqua 1 BG Aqua 4": { img: "./assets/ribbon_main/ribbon_main_aqua02_only.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
+        "Green 1 BG White": { img: "./assets/ribbon_main/ribbon_main_green02_white.png", rduration: true, lock: true, alpha: true, data: AR3 },
+        "Green 1 BG Green 4": { img: "./assets/ribbon_main/ribbon_main_green02_only.png", rduration: true, lock: true, alpha: false, data: AR3 },
+        "Aqua 1 BG White": { img: "./assets/ribbon_main/ribbon_main_aqua02_white.png", rduration: true, lock: true, alpha: true, data: AR3 },
+        "Aqua 1 BG Aqua 4": { img: "./assets/ribbon_main/ribbon_main_aqua02_only.png", rduration: true, lock: true, alpha: false, data: AR3 },
       },
     },
     "3D": {
       Fluid: {
-        "Red 1 BG White": { img: "./assets/3d_fluid_main/3d_fluid_red_white.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Red 1 BG Red 4": { img: "./assets/3d_fluid_main/3d_fluid_red_only.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Blue 1 BG White": { img: "./assets/3d_fluid_main/3d_fluid_blue_white.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Blue 1 BG Blue 4": { img: "./assets/3d_fluid_main/3d_fluid_blue_only.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Teal 1 BG White": { img: "./assets/3d_fluid_main/3d_fluid_teal_white.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Teal 1 BG Teal 4": { img: "./assets/3d_fluid_main/3d_fluid_teal_only.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Salmon 1 BG White": { img: "./assets/3d_fluid_main/3d_fluid_salmon_white.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Salmon 1 BG Salmon 4": { img: "./assets/3d_fluid_main/3d_fluid_salmon_only.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Orange 1 BG White": { img: "./assets/3d_fluid_main/3d_fluid_orange_white.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Orange 1 BG Orange 4": { img: "./assets/3d_fluid_main/3d_fluid_orange_only.jpg", rduration: true, lock: false, alpha: false, data: AR3 },
-        "Purple 1 BG White": { img: "./assets/3d_fluid_main/3d_fluid_purple_white.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Purple 1 BG Purple 4": { img: "./assets/3d_fluid_main/3d_fluid_purple_only.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Fuchsia 1 BG White": { img: "./assets/3d_fluid_main/3d_fluid_fuchsia_white.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Fuchsia 1 BG Fuchsia 4": { img: "./assets/3d_fluid_main/3d_fluid_fuchsia_only.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Green 1 BG White": { img: "./assets/3d_fluid_main/3d_fluid_green_white.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Green 1 BG Green 4": { img: "./assets/3d_fluid_main/3d_fluid_green_only.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Aqua 1 BG White": { img: "./assets/3d_fluid_main/3d_fluid_aqua_white.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Aqua 1 BG Aqua 4": { img: "./assets/3d_fluid_main/3d_fluid_aqua_only.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
+        "Red 1 BG White": { img: "./assets/3d_fluid_main/3d_fluid_red_white.png", rduration: true, lock: true, alpha: true, data: AR3 },
+        "Red 1 BG Red 4": { img: "./assets/3d_fluid_main/3d_fluid_red_only.png", rduration: true, lock: true, alpha: false, data: AR3 },
+        "Blue 1 BG White": { img: "./assets/3d_fluid_main/3d_fluid_blue_white.png", rduration: true, lock: true, alpha: true, data: AR3 },
+        "Blue 1 BG Blue 4": { img: "./assets/3d_fluid_main/3d_fluid_blue_only.png", rduration: true, lock: true, alpha: false, data: AR3 },
+        "Teal 1 BG White": { img: "./assets/3d_fluid_main/3d_fluid_teal_white.png", rduration: true, lock: true, alpha: true, data: AR3 },
+        "Teal 1 BG Teal 4": { img: "./assets/3d_fluid_main/3d_fluid_teal_only.png", rduration: true, lock: true, alpha: false, data: AR3 },
+        "Salmon 1 BG White": { img: "./assets/3d_fluid_main/3d_fluid_salmon_white.png", rduration: true, lock: true, alpha: true, data: AR3 },
+        "Salmon 1 BG Salmon 4": { img: "./assets/3d_fluid_main/3d_fluid_salmon_only.png", rduration: true, lock: true, alpha: false, data: AR3 },
+        "Orange 1 BG White": { img: "./assets/3d_fluid_main/3d_fluid_orange_white.png", rduration: true, lock: true, alpha: true, data: AR3 },
+        "Orange 1 BG Orange 4": { img: "./assets/3d_fluid_main/3d_fluid_orange_only.png", rduration: true, lock: false, alpha: false, data: AR3 },
+        "Purple 1 BG White": { img: "./assets/3d_fluid_main/3d_fluid_purple_white.png", rduration: true, lock: true, alpha: true, data: AR3 },
+        "Purple 1 BG Purple 4": { img: "./assets/3d_fluid_main/3d_fluid_purple_only.png", rduration: true, lock: true, alpha: false, data: AR3 },
+        "Fuchsia 1 BG White": { img: "./assets/3d_fluid_main/3d_fluid_fuchsia_white.png", rduration: true, lock: true, alpha: true, data: AR3 },
+        "Fuchsia 1 BG Fuchsia 4": { img: "./assets/3d_fluid_main/3d_fluid_fuchsia_only.png", rduration: true, lock: true, alpha: false, data: AR3 },
+        "Green 1 BG White": { img: "./assets/3d_fluid_main/3d_fluid_green_white.png", rduration: true, lock: true, alpha: true, data: AR3 },
+        "Green 1 BG Green 4": { img: "./assets/3d_fluid_main/3d_fluid_green_only.png", rduration: true, lock: true, alpha: false, data: AR3 },
+        "Aqua 1 BG White": { img: "./assets/3d_fluid_main/3d_fluid_aqua_white.png", rduration: true, lock: true, alpha: true, data: AR3 },
+        "Aqua 1 BG Aqua 4": { img: "./assets/3d_fluid_main/3d_fluid_aqua_only.png", rduration: true, lock: true, alpha: false, data: AR3 },
       },
       Precise: {
-        "Red 1 BG White": { img: "./assets/3d_precise/3d_precise_red02_white.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Red 1 BG Red 4": { img: "./assets/3d_precise/3d_precise_red02_only.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Blue 1 BG White": { img: "./assets/3d_precise/3d_precise_blue02_white.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Blue 1 BG Blue 4": { img: "./assets/3d_precise/3d_precise_blue02_only.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Teal 1 BG White": { img: "./assets/3d_precise/3d_precise_teal02_white.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Teal 1 BG Teal 4": { img: "./assets/3d_precise/3d_precise_teal02_only.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Salmon 1 BG White": { img: "./assets/3d_precise/3d_precise_salmon02_white.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Salmon 1 BG Salmon 4": { img: "./assets/3d_precise/3d_precise_salmon02_only.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Orange 1 BG White": { img: "./assets/3d_precise/3d_precise_orange02_white.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Orange 1 BG Orange 4": { img: "./assets/3d_precise/3d_precise_orange02_only.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Purple 1 BG White": { img: "./assets/3d_precise/3d_precise_purple02_white.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Purple 1 BG Purple 4": { img: "./assets/3d_precise/3d_precise_purple02_only.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Fuchsia 1 BG White": { img: "./assets/3d_precise/3d_precise_fuchsia02_white.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Fuchsia 1 BG Fuchsia 4": { img: "./assets/3d_precise/3d_precise_fuchsia02_only.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Green 1 BG White": { img: "./assets/3d_precise/3d_precise_green02_white.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Green 1 BG Green 4": { img: "./assets/3d_precise/3d_precise_green02_only.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Aqua 1 BG White": { img: "./assets/3d_precise/3d_precise_aqua02_white.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
-        "Aqua 1 BG Aqua 4": { img: "./assets/3d_precise/3d_precise_aqua02_only.jpg", rduration: true, lock: true, alpha: false, data: AR3 },
+        "Red 1 BG White": { img: "./assets/3d_precise/3d_precise_red02_white.png", rduration: true, lock: true, alpha: true, data: AR3 },
+        "Red 1 BG Red 4": { img: "./assets/3d_precise/3d_precise_red02_only.png", rduration: true, lock: true, alpha: false, data: AR3 },
+        "Blue 1 BG White": { img: "./assets/3d_precise/3d_precise_blue02_white.png", rduration: true, lock: true, alpha: true, data: AR3 },
+        "Blue 1 BG Blue 4": { img: "./assets/3d_precise/3d_precise_blue02_only.png", rduration: true, lock: true, alpha: false, data: AR3 },
+        "Teal 1 BG White": { img: "./assets/3d_precise/3d_precise_teal02_white.png", rduration: true, lock: true, alpha: true, data: AR3 },
+        "Teal 1 BG Teal 4": { img: "./assets/3d_precise/3d_precise_teal02_only.png", rduration: true, lock: true, alpha: false, data: AR3 },
+        "Salmon 1 BG White": { img: "./assets/3d_precise/3d_precise_salmon02_white.png", rduration: true, lock: true, alpha: true, data: AR3 },
+        "Salmon 1 BG Salmon 4": { img: "./assets/3d_precise/3d_precise_salmon02_only.png", rduration: true, lock: true, alpha: false, data: AR3 },
+        "Orange 1 BG White": { img: "./assets/3d_precise/3d_precise_orange02_white.png", rduration: true, lock: true, alpha: true, data: AR3 },
+        "Orange 1 BG Orange 4": { img: "./assets/3d_precise/3d_precise_orange02_only.png", rduration: true, lock: true, alpha: false, data: AR3 },
+        "Purple 1 BG White": { img: "./assets/3d_precise/3d_precise_purple02_white.png", rduration: true, lock: true, alpha: true, data: AR3 },
+        "Purple 1 BG Purple 4": { img: "./assets/3d_precise/3d_precise_purple02_only.png", rduration: true, lock: true, alpha: false, data: AR3 },
+        "Fuchsia 1 BG White": { img: "./assets/3d_precise/3d_precise_fuchsia02_white.png", rduration: true, lock: true, alpha: true, data: AR3 },
+        "Fuchsia 1 BG Fuchsia 4": { img: "./assets/3d_precise/3d_precise_fuchsia02_only.png", rduration: true, lock: true, alpha: false, data: AR3 },
+        "Green 1 BG White": { img: "./assets/3d_precise/3d_precise_green02_white.png", rduration: true, lock: true, alpha: true, data: AR3 },
+        "Green 1 BG Green 4": { img: "./assets/3d_precise/3d_precise_green02_only.png", rduration: true, lock: true, alpha: false, data: AR3 },
+        "Aqua 1 BG White": { img: "./assets/3d_precise/3d_precise_aqua02_white.png", rduration: true, lock: true, alpha: true, data: AR3 },
+        "Aqua 1 BG Aqua 4": { img: "./assets/3d_precise/3d_precise_aqua02_only.png", rduration: true, lock: true, alpha: false, data: AR3 },
       },
     },
     // Continue dessa forma para as outras categorias: Database, Hybrid/Cross-Platform
@@ -311,23 +332,41 @@
     image.onload = function () {
       image.classList.add("fade");
       const cropData = imageData.data[aspectRatio];
-      const cropScale = cropOption === "100%" ? 1 : cropOption === "200%" ? 0.7 : 1;
+      const cropScale = cropOption === "100%" ? 0.99 : cropOption === "200%" ? 0.7 : 0.9;
       console.log(cropScale);
       console.log(cropData);
       cropper = new Cropper(image, {
         viewMode: 3,
         zoomable: false,
         aspectRatio: cropData.aspectRatio,
+        highlight: false,
         crop: function (event) {
           data.textContent = JSON.stringify(cropper.getData(true));
         },
         ready: function () {
+          let cropData = imageData.data[aspectRatio];
+          const cropScale = cropOption === "100%" ? 0.99 : cropOption === "200%" ? 0.7 : 0.9;
+
+          let newWidth = cropData.width * cropScale;
+          let newHeight = (cropData.width * cropScale) / cropData.aspectRatio;
+
+          // If lock is false and cropOption is "100%" or "200%", center the crop area
+          if (!lock && (cropOption === "100%" || cropOption === "200%")) {
+            cropData.x = (image.naturalWidth - newWidth) / 2;
+            cropData.y = (image.naturalHeight - newHeight) / 2;
+          }
+
           cropper.setData({
             x: cropData.x,
             y: cropData.y,
-            width: cropData.width * cropScale,
-            height: (cropData.width * cropScale) / cropData.aspectRatio,
+            width: newWidth,
+            height: newHeight,
           });
+
+          // If lock is true, disable the cropper
+          if (lock) {
+            cropper.disable();
+          }
         },
         cropmove: function (event) {
           if (lock == true) event.preventDefault();
@@ -443,12 +482,30 @@
       // Disable crop_select if lock is true
       crop_select.disabled = lock;
 
+      if (lock) {
+        crop_select.value = "100%";
+        crop_select.onchange(); // trigger the onchange event to update the cropper with 100% crop
+      }
+
       aspect_ratio_select.disabled = !this.value;
       aspect_ratio_select.onchange();
       checkAlpha();
       updateRdurationSettings();
     };
 
+    crop_select.onchange = function () {
+      const chosenData = imagesData[style.value][version.value][color_scheme.value];
+      const aspectRatio = aspect_ratio_select.value;
+      const lock = chosenData.lock;
+
+      let cropOption = this.value;
+      if (lock) {
+        cropOption = "100%"; // force crop option to be 100% if lock is true
+      }
+
+      checkAlpha();
+      initCropper(chosenData, aspectRatio, lock, cropOption);
+    };
     aspect_ratio_select.onchange = function () {
       const chosenData = imagesData[style.value][version.value][color_scheme.value];
       const aspectRatio = this.value;
