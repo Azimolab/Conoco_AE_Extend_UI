@@ -21,9 +21,9 @@ body {
 }
 
 #data {
-  color: white;
+  /* color: white; */
 
-  /* color: #232323; */
+  color: #232323;
 }
 
 #customRange1 {
