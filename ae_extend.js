@@ -18,8 +18,8 @@
   let cropper;
 
   var rduration = true;
-  var intervaloPermitido = [10, 15, 20, 25];
-  var valoresDesabilitados = [5, 30, 35, 40, 45, 50, 55, 60];
+  var intervaloPermitido = [10, 15, 20, 30];
+  var valoresDesabilitados = [5, 25, 35, 40, 45, 50, 55, 60];
 
   document.getElementById("customRange1").addEventListener("input", function () {
     updateValue(this.value);
