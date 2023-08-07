@@ -340,6 +340,9 @@
         zoomable: false,
         aspectRatio: cropData.aspectRatio,
         highlight: false,
+        guides: !lock,
+        cropBoxResizable: !lock,
+        center: !lock,
         crop: function (event) {
           data.textContent = JSON.stringify(cropper.getData(true));
         },
