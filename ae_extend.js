@@ -286,7 +286,7 @@
         "Salmon 1 BG White": { img: "./assets/3d_fluid_main/3d_fluid_salmon_white.png", rduration: true, lock: true, alpha: true, data: AR3 },
         "Salmon 1 BG Salmon 4": { img: "./assets/3d_fluid_main/3d_fluid_salmon_only.png", rduration: true, lock: true, alpha: false, data: AR3 },
         "Orange 1 BG White": { img: "./assets/3d_fluid_main/3d_fluid_orange_white.png", rduration: true, lock: true, alpha: true, data: AR3 },
-        "Orange 1 BG Orange 4": { img: "./assets/3d_fluid_main/3d_fluid_orange_only.png", rduration: true, lock: false, alpha: false, data: AR3 },
+        "Orange 1 BG Orange 4": { img: "./assets/3d_fluid_main/3d_fluid_orange_only.png", rduration: true, lock: true, alpha: false, data: AR3 },
         "Purple 1 BG White": { img: "./assets/3d_fluid_main/3d_fluid_purple_white.png", rduration: true, lock: true, alpha: true, data: AR3 },
         "Purple 1 BG Purple 4": { img: "./assets/3d_fluid_main/3d_fluid_purple_only.png", rduration: true, lock: true, alpha: false, data: AR3 },
         "Fuchsia 1 BG White": { img: "./assets/3d_fluid_main/3d_fluid_fuchsia_white.png", rduration: true, lock: true, alpha: true, data: AR3 },
