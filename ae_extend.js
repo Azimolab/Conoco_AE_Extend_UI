@@ -152,7 +152,7 @@
       "With Lines": {
         "Red only": { img: "./assets/smml/smml_red_only.png", rduration: false, lock: false, alpha: false, data: AR },
         "Blue only": { img: "./assets/smml/smml_blue_only.png", rduration: false, lock: false, alpha: false, data: AR },
-        "Teal only": { img: "./assets/smml/smml__teal_only.png", rduration: false, lock: false, alpha: false, data: AR },
+        "Teal only": { img: "./assets/smml/smml_teal_only.png", rduration: false, lock: false, alpha: false, data: AR },
         "Salmon only": { img: "./assets/smml/smml_salmon_only.png", rduration: false, lock: false, alpha: false, data: AR },
         "Orange only": { img: "./assets/smml/smml_orange_only.png", rduration: false, lock: false, alpha: false, data: AR },
         "Purple only": { img: "./assets/smml/smml_purple_only.png", rduration: false, lock: false, alpha: false, data: AR },
@@ -194,7 +194,7 @@
           data: AR2,
         },
         "Teal + Green": {
-          img: "./assets/smm_text_frame/smm_text_frame_teal_green_16disable.jpg_9.png",
+          img: "./assets/smm_text_frame/smm_text_frame_teal_green_16_9.png",
           rduration: false,
           lock: true,
           alpha: true,
